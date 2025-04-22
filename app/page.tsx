@@ -1,13 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import HeroSection from "@/components/hero-section"
-import Timeline from "@/components/timeline"
-import PhotoCarousel from "@/components/photo-carousel"
-import VideoGallery from "@/components/video-gallery"
-import LoveLetterReveal from "@/components/love-letter-reveal"
-import ParticleBackground from "@/components/particle-background"
-import { AccessCode } from "@/components/access-code"
+import HeroSection from "../components/hero-section"
+import Timeline from "../components/timeline"
+import PhotoCarousel from "../components/photo-carousel"
+import VideoGallery from "../components/video-gallery"
+import LoveLetterReveal from "../components/love-letter-reveal"
+import ParticleBackground from "../components/particle-background"
+import { AccessCode } from "../components/access-code"
 
 export default function HomePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
