@@ -2,10 +2,15 @@ import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+
+export const metadata = {
+  title: "Our Love Story",
+  description: "A beautiful journey of love and memories",
+}
 
 export default function RootLayout({
   children,
@@ -15,11 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn("min-h-screen bg-background font-sans antialiased", GeistSans.variable, GeistMono.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <div className="relative flex min-h-screen flex-col">
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
             <Header />
-            <div className="flex-1">{children}</div>
+            <main className="flex-grow">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
@@ -31,7 +41,3 @@ export default function RootLayout({
 
 
 import './globals.css'
-
-export const metadata = {
-      generator: 'v0.dev'
-    };
